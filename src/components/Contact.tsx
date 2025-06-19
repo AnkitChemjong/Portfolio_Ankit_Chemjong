@@ -20,38 +20,33 @@ const Contact = () => {
   const checkDisable=()=>{
     return Object.values(data).some(value => !value.trim());
   }
-  const formToSubmit=useRef(null);
-  const handlFormSubmit= async()=>{
+  const formToSubmit = useRef<HTMLFormElement | null>(null);
+  const handlFormSubmit = async () => {
+    if (!formToSubmit.current) return;
+  
     setLoad(true);
-    try{
+    try {
       await emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICEID, 
-        import.meta.env.VITE_EMAILJS_TEMPLATEID, 
+        import.meta.env.VITE_EMAILJS_SERVICEID,
+        import.meta.env.VITE_EMAILJS_TEMPLATEID,
         formToSubmit.current,
-        import.meta.env.VITE_EMAILJS_PUBLICKEY 
-      )
-      .then((result) => {
-        //console.log(result);
-        formToSubmit.current.reset();
-        setData({
-          websiteName:"Ankit Chemjong",
-          email:"",
-          companyName:"",
-          number:"",
-          description:""
-        })
-        
-        toast.success("Message send successfully.");
-      }).catch(error=>{
-        toast.error(error.message)});
-    }
-    catch(error){
-      toast.error("Something error try again...")
-    }
-    finally{
+        import.meta.env.VITE_EMAILJS_PUBLICKEY
+      );
+      formToSubmit.current.reset();
+      setData({
+        websiteName: "Ankit Chemjong",
+        email: "",
+        companyName: "",
+        number: "",
+        description: "",
+      });
+      toast.success("Message sent successfully.");
+    } catch (error: any) {
+      toast.error(error.message || "Something went wrong.");
+    } finally {
       setLoad(false);
     }
-  }
+  };
   return (
     <div id="contact" className="w-screen h-fit text-center py-20 md:py-10 px-20">
       <h1 className="text-3xl font-bold">
