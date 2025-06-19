@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import ScrollInToView from "@/Service/ScrollInToView";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { TiThMenu } from "react-icons/ti";

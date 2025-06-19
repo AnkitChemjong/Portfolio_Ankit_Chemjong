@@ -13,8 +13,8 @@ const Contact = () => {
      description:""
   });
   const handleChange=(e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> )=>{
-      const {name,files,value}=e.target;
-      setData((prev)=>({...prev,[name]:files? files[0]:value}))
+      const {name,value}=e.target;
+      setData((prev)=>({...prev,[name]:value}))
 
   }
   const checkDisable=()=>{
