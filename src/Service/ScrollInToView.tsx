@@ -1,0 +1,10 @@
+import React from 'react'
+
+const ScrollInToView = (id:string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+export default ScrollInToView;

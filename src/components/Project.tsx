@@ -5,6 +5,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { motion } from "motion/react"
+const MotionCard = motion(Card);
 
 const Project = () => {
   const projects = [
@@ -39,14 +41,15 @@ const Project = () => {
   ];
 
   return (
-    <div className="flex flex-col text-center w-screen h-fit py-10 px-4">
+    <div id='project' className="flex flex-col text-center w-screen h-fit py-10 px-4">
       <h1 className="text-3xl font-bold">
         MY <span className="text-green-900">PROJECTS</span>
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 md:px-20">
         {projects.map((item, index) => (
-          <Card
+          <MotionCard
+          whileTap={{ scale: 0.80 }}
             key={index}
             className="flex flex-col hover:scale-110 transition-all duration-150 cursor-pointer justify-between items-start p-2 text-center"
           >
@@ -78,7 +81,7 @@ const Project = () => {
                 View on GitHub →
               </a>
             </CardContent>
-          </Card>
+          </MotionCard>
         ))}
       </div>
     </div>

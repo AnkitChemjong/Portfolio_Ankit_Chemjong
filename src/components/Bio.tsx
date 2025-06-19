@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+
 
 const Bio = () => {
   return (
-    <div className='w-full h-fit py-10 grid grid-cols-1 md:grid-cols-2 place-items-center'>
+    <div id='bio' className='w-full h-fit py-5 grid grid-cols-1 md:grid-cols-2 place-items-center px-10'>
         <div className=''>
         <h1 className='text-3xl font-bold'>Hello, I Am <span className='text-green-900'>Ankit,</span></h1>
             <p className='text-sm font-semibold leading-relaxed'>I'm a passionate and dedicated web developer with a strong foundation <br/>
