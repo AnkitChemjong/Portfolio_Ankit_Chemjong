@@ -5,7 +5,7 @@ const Navbar = () => {
     const navLinks=["Home","About","Skills","Resume","Project","Contact"]
   return (
     <div className='flex flex-col w-screen h-screen p-4'>
-    <div className=' flex w-full h-fit px-10 md:px-44 py-4 justify-between items-center'>
+    <div className=' flex w-full h-fit px-10 md:px-20 py-4 justify-between items-center'>
         <div>
             <h1 className='text-3xl font-bold text-green-900'>Ankit Chemjong</h1>
         </div>
