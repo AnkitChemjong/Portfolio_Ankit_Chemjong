@@ -1,103 +1,53 @@
-import Image from "next/image";
+"use client"
+import NavbarAnkit from "@/components/NavbarAnkit";
+import MarqueeScrollControlled from "@/components/MarqueTag";
+import SkillAnkit from "@/components/SkillAnkit";
+import BioAnkit from "@/components/BioAnkit";
+import ProjectAnkit from "@/components/ProjectAnkit";
+import Footer from "@/components/Footer";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div id="home" className="overflow-x-hidden">
+     <NavbarAnkit/>
+    <div className="w-screen h-fit lg:h-screen relative bg-gradient-to-tr from-blue-50 to-amber-100 mt-19 md:mt-20 md:px-48 z-0 px-10 py-2 overflow-y-auto">
+     <div className="flex flex-row w-full justify-center items-center md:space-x-68 lg:space-x-72  md:mt-10 md:mb-10 mb-2">
+      <h1 className="dancing-script md:text-8xl text-4xl">Hey,</h1>
+      <h1 className="dancing-script md:text-8xl text-4xl">there</h1>
+     </div>
+      <div className="absolute z-[1] w-fit h-fit flex justify-center items-center md:bottom-32 
+      md:right-27 lg:bottom-80 lg:right-95 md:mt-0 mt-10">
+     <img src="/image/av.svg" className="w-1/2 h-1/2"   alt="" />
+      </div>
+     <div className="relative flex flex-row sm:justify-between lg:justify-between md:right-14 md:space-x-28 lg:space-x-16 md:mt-0 mt-72">
+      <div className="z-3">
+      <h1 className="title md:text-6xl text-3xl">I AM</h1>
+      <h1 className="title md:text-6xl text-3xl">ANKIT CHEMJONG</h1>
+      </div>
+      <div className="z-3 md:space-y-10">
+        <p className="paragraph md:text-base text-sm">Full-stack development using the MERN stack has <br/>
+           been specialized in, with expertise applied across<br/>
+            both frontend and backend solutions.</p>
+      <div className="flex md:flex-row flex-col space-x-4 md:items-center md:justify-center">
+        <div>
+        <h1 className="title md:text-4xl text-2xl">PASSIONATE</h1>
+        <h1 className="title md:text-4xl text-2xl">WEB</h1>
+        <h1 className="title md:text-4xl text-2xl">DEVELOPER</h1>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <button className='bg-black dark:text-black text-white py-2 px-5
+        md:shrink-0
+       rounded-3xl cursor-pointer hover:scale-105 transition-all duration-150 w-fit'>Hire Me</button>
+            </div>
+      </div>
+     </div>
+    </div>
+   <MarqueeScrollControlled/>
+  <BioAnkit/>
+<SkillAnkit/>
+<ProjectAnkit/>
+<Contact/>
+<Footer/>
     </div>
   );
 }
