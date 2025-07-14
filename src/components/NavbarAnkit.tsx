@@ -29,7 +29,7 @@ const NavbarAnkit = () => {
       }
     }
   return (
-    <div className='flex flex-row fixed justify-evenly items-center top-0 w-screen h-fit py-5 bg-yellow-200
+    <div className='flex flex-row fixed justify-evenly items-center top-0 w-screen h-fit py-5 bg-transparent 
     shadow-md shadow-black z-10 '>
       <motion.h1
       initial={{opacity:0, y:20}}

@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState,useRef } from 'react';
+import { toast } from 'sonner';
+import emailjs from '@emailjs/browser';
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +10,7 @@ const Contact = () => {
     email: '',
     acceptedTerms: false
   });
+  const formDataRef=useRef(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target as HTMLInputElement;
@@ -18,21 +22,43 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit =async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Inquiry sent successfully!');
+    try{
+       await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICEID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATEID!,
+        formDataRef.current!,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLICKEY!
+       ).then(()=>{
+        toast.success("Email send successfully.");
+        setFormData({
+          name: '',
+          inquiryType: '',
+          email: '',
+          acceptedTerms: false
+        });
+       }).catch((error:any)=>{
+        console.log(error);
+      toast.error(error.message||"Error on submitting the form try again.")
+       })
+
+    }
+    catch(error:any){
+    console.log(error);
+      toast.error(error.message||"Error on submitting the form try again.")
+    }
   };
 
   return (
-    <div id="contact" className='w-full bg-gradient-to-br from-amber-50 to-amber-100 p-8 font-sans'>
+    <div id="contact" className='w-full  p-8 font-sans'>
       <div className='max-w-2xl mx-auto'>
         <div className='bg-white rounded-xl shadow-lg overflow-hidden'>
           <div className='p-8'>
-            <h1 className='text-3xl font-bold mb-2 text-gray-800'>Schedule an Appointment</h1>
+            <h1 className='text-2xl font-bold mb-2 text-gray-800'>Schedule an <span className='text-3xl md:text-4xl text-amber-500'>Appointment</span></h1>
             <p className='text-gray-500 mb-6'>Let's discuss how we can work together</p>
             
-            <form onSubmit={handleSubmit} className='space-y-6'>
+            <form onSubmit={handleSubmit} ref={formDataRef} className='space-y-6'>
               <div className='space-y-1'>
                 <p className='text-gray-700'>
                   Hey, my name is{' '}
@@ -81,7 +107,7 @@ const Contact = () => {
                   name='acceptedTerms'
                   checked={formData.acceptedTerms}
                   onChange={handleChange}
-                  className='mt-1 h-5 w-5 text-amber-600 focus:ring-amber-500 border-gray-300 rounded'
+                  className='mt-1 h-5 w-5 cursor-pointer text-amber-600 focus:ring-amber-500 border-gray-300 rounded'
                   required
                 />
                 <span className='text-sm text-gray-600'>I accept all terms and conditions</span>
@@ -90,7 +116,7 @@ const Contact = () => {
               <div className='pt-4'>
                 <button
                   type='submit'
-                  className='w-full bg-gradient-to-r from-amber-500 to-amber-600 text-white py-3 px-6 rounded-lg hover:from-amber-600 hover:to-amber-700 transition-all duration-300 font-medium text-center shadow-md hover:shadow-lg'
+                  className='w-full bg-gradient-to-r cursor-pointer from-amber-500 to-amber-600 text-white py-3 px-6 rounded-lg hover:from-amber-600 hover:to-amber-700 transition-all duration-300 font-medium text-center shadow-md hover:shadow-lg'
                 >
                   Send Inquiry
                 </button>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono,Dancing_Script,Oswald,Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "sonner";
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -46,6 +47,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${dancingScript.variable} 
         ${oswald.variable} ${playfair.variable} antialiased`}
       >
+        <Toaster/>
         {children}
       </body>
     </html>
