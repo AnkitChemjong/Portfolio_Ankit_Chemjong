@@ -48,7 +48,7 @@ const MarqueeScrollControlled: React.FC = () => {
 
     window.addEventListener("wheel", handleWheel);
     return () => window.removeEventListener("wheel", handleWheel);
-  }, [controls]);
+  }, [controls,arrowControl, arrowControl2, controls2]);
 
   const handleAnimationStop=()=>{
     arrowControl.stop();
