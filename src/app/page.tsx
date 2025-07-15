@@ -19,7 +19,7 @@ export default function Home() {
      </div>
       <div className="absolute z-[1] w-fit h-fit flex justify-center items-center md:bottom-32 
       md:right-27 lg:bottom-80 lg:right-95 md:mt-0 mt-10">
-     <Image src="/image/av.svg" className="w-1/2 h-1/2"   alt="" />
+     <Image  src="/image/av.svg" sizes="100vw" width={0} height={0} className="w-1/2 h-1/2"   alt="" />
       </div>
      <div className="relative flex flex-row sm:justify-between lg:justify-between md:right-14 md:space-x-28 lg:space-x-16 md:mt-0 mt-72">
       <div className="z-3">

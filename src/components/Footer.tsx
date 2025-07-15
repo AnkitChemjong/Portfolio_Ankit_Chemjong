@@ -12,7 +12,7 @@ const Footer = () => {
     <footer className="w-full bg-white p-8 font-sans border-t-2 border-amber-950">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between gap-8 mb-8">
-         <Image src="./image/favicon.png" alt="icon" className='w-48 h-48'/>
+         <Image height={0} src="/image/favicon.png" sizes="100vw" width={0} alt="icon" className='w-48 h-48'/>
           <div className="flex-1">
             <h3 className="text-lg font-bold mb-4">Navigation</h3>
             <ul className="space-y-2">
