@@ -1,10 +1,24 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import {motion} from 'framer-motion';
 
 const NavbarAnkit = () => {
  const [path,setPath]=useState("/");
- console.log(path);
+ //console.log(path);
+ const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) { 
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
     const navItems=
     [
@@ -29,8 +43,8 @@ const NavbarAnkit = () => {
       }
     }
   return (
-    <div className='flex flex-row fixed justify-evenly items-center top-0 w-screen h-fit py-5 bg-transparent 
-    shadow-md shadow-black z-10 '>
+    <div className={`flex flex-row fixed justify-evenly items-center top-0 w-screen h-fit py-5 ${scrolled? 'bg-amber-200':'bg-transparent' }
+    shadow-md shadow-black z-10`}>
       <motion.h1
       initial={{opacity:0, y:20}}
       animate={{opacity:1,y:0}}
