@@ -3,9 +3,10 @@ import Image from 'next/image';
 
 const SkillAnkit = () => {
   return (
-    <div id='skill' className="w-screen h-fit text-center md:px-48 px-10 md:py-10 ">
+    <div id='skill' className="relative w-screen h-fit text-center md:px-48 px-10 md:py-10 ">
 <h1 className="title md:text-2xl text-xl font-bold mb-6">SKILL</h1>
-<div className="relative w-full h-full flex flex-col justify-center items-center md:mt-10 md:right-0 right-20 ">
+<div className="relative w-full h-full flex flex-col justify-center items-center
+ md:mt-10 md:right-40 right-20 ">
   <div className="relative left-40 md:left-80 w-40 h-9 md:w-80 md:h-14 
   bg-amber-100 rounded-b-sm border-2 border-b-fuchsia-950 flex items-center justify-center space-x-10
   shadow-2xl">

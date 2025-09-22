@@ -64,7 +64,7 @@ const NavbarAnkit = () => {
       }
     }
   return (
-    <div className={`flex flex-row fixed justify-evenly items-center top-0 w-screen 
+    <div className={`flex flex-row fixed justify-evenly items-center z-40 top-0 w-screen 
       h-fit py-5 ${scrolled? 'bg-amber-200':'bg-transparent' }
     shadow-md shadow-black z-10`}>
       <motion.h1
