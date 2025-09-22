@@ -86,7 +86,8 @@ const MarqueeScrollControlled: React.FC = () => {
     <div
     onMouseEnter={handleAnimationStop}
     onMouseLeave={handleAnimationStart}
-    className="overflow-hidden w-full h-fit py-5 bg-black flex flex-col items-center gap-10
+    className="overflow-hidden z-10
+     w-full  h-fit py-5 bg-black flex flex-col items-center gap-10
     -rotate-3">
       <motion.div
         animate={controls}

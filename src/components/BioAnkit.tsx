@@ -2,7 +2,8 @@ import React from 'react'
 
 const BioAnkit = () => {
   return (
-    <div id='about' className="relative w-screen min-h-fit md:h-fit text-center mt-10 md:px-48 px-6 py-10">
+    <div id='about' className="relative w-screen min-h-fit md:h-fit 
+    text-center mt-10 md:px-48 px-6 py-10">
     <h1 className="title md:text-2xl text-xl font-bold mb-6">KNOW ME</h1>
   
     <div className="text-left md:text-right mb-10">
