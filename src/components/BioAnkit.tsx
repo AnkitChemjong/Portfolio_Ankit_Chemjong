@@ -1,12 +1,24 @@
 import React from 'react'
 
 const BioAnkit = () => {
+  const downloadCV=()=>{
+    // const newBlob=new Blob(["/CV/AnkitChemjongCV.pdf"],{type:"application/pdf"});
+    // const doc=window.URL.createObjectURL(newBlob);
+    const a= document.createElement('a'); 
+    a.href="/CV/AnkitChemjongCV.pdf";
+    a.target="_black";
+    a.download="ankitCV.pdf"
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    // window.URL.revokeObjectURL(doc);
+  }
   return (
     <div id='about' className="relative w-screen min-h-fit md:h-fit 
-    text-center mt-10 md:px-48 px-6 py-10">
+    text-center mt-10 md:px-40 px-6 py-10">
     <h1 className="title md:text-2xl text-xl font-bold mb-6">KNOW ME</h1>
   
-    <div className="text-left md:text-right mb-10">
+    <div className="text-left md:text-right mb-10 ">
       <h1 className="text-base font-semibold">
         ANKIT <span className="text-4xl lg:text-6xl text-amber-900">CHEMJONG</span>
       </h1>
@@ -24,6 +36,10 @@ const BioAnkit = () => {
         I enjoy exploring how things work behind the scenes and love building real-world projects.
         My goal is to keep growing in the tech field and use my skills to create meaningful solutions.
       </p>
+      <div className='w-full flex justify-center items-center relative top-5'>
+      <button onClick={downloadCV} className='bg-black dark:text-black text-white py-2 px-5
+       rounded-3xl cursor-pointer hover:scale-105 transition-all duration-150 w-fit'>Get CV</button>
+      </div>
       </div>
       </div>
     </div>
