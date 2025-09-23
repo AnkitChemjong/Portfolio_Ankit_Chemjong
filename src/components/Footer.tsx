@@ -1,7 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
+import { BentoCard } from './HoverEffect';
 
 const Footer = () => {
+
     const handleClick=(id:string)=>{
         const navigation= document.getElementById(id);
         if(navigation){
@@ -48,10 +50,13 @@ const Footer = () => {
               <h1 className="text-xl font-bold shrink-0">BE <span className='text-2xl md:text-3xl text-amber-500'>CREATIVE</span></h1>
               <h1 className="text-xl font-bold shrink-0">BE <span className='text-4xl md:text-5xl text-blue-700'>CURIOUS</span></h1>
             </div>
-            <button className="bg-black text-white px-6 py-2 cursor-pointer hover:scale-105 transition-all
-            ease-in-out duration-200 rounded-full">
-              Hire me
-            </button>
+            <div>
+            <BentoCard
+                    func={()=>{handleClick("contact")}}
+                    text="Hire Me" />
+            </div>
+
+
           </div>
         </div>
 

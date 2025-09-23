@@ -1,4 +1,4 @@
-import React from 'react'
+import { BentoCard } from "./HoverEffect";
 
 const BioAnkit = () => {
   const downloadCV=()=>{
@@ -36,9 +36,12 @@ const BioAnkit = () => {
         I enjoy exploring how things work behind the scenes and love building real-world projects.
         My goal is to keep growing in the tech field and use my skills to create meaningful solutions.
       </p>
-      <div className='w-full flex justify-center items-center relative top-5'>
+      {/* <div className='w-full flex justify-center items-center relative top-5'>
       <button onClick={downloadCV} className='bg-black dark:text-black text-white py-2 px-5
        rounded-3xl cursor-pointer hover:scale-105 transition-all duration-150 w-fit'>Get CV</button>
+      </div> */}
+      <div className='w-full flex justify-center items-center relative top-5'>
+      <BentoCard text="Get CV" func={downloadCV}/>
       </div>
       </div>
       </div>

@@ -4,7 +4,7 @@ import {motion} from 'framer-motion';
 import { BsMenuApp } from "react-icons/bs";
 import { BsMenuAppFill } from "react-icons/bs";
 import { useClickAway } from "react-use";
-
+import { BentoCard } from './HoverEffect';
 
 const NavbarAnkit = () => {
  const [path,setPath]=useState("/");
@@ -12,6 +12,7 @@ const NavbarAnkit = () => {
  const [scrolled, setScrolled] = useState(false);
  const [showNav, setShowNav] = useState(false);
  const navRef=useRef<HTMLDivElement>(null);
+ const MotionBentoCard=motion(BentoCard);
 
  const MotionBsMenuAppFill=motion(BsMenuAppFill);
   const MotionBsMenuApp=motion(BsMenuApp);
@@ -65,7 +66,7 @@ const NavbarAnkit = () => {
     }
   return (
     <div className={`flex flex-row fixed justify-evenly items-center z-40 top-0 w-screen 
-      h-fit py-5 ${scrolled? 'bg-amber-200':'bg-transparent' }
+      h-fit py-4 ${scrolled? 'bg-amber-200':'bg-transparent' }
     shadow-md`}>
       <motion.h1
       initial={{opacity:0, y:20}}
@@ -110,16 +111,18 @@ const NavbarAnkit = () => {
       <div>
 
       </div>
-      <motion.button
+      <div className='absolute md:right-20 lg:right-50 hidden md:block'>
+      <MotionBentoCard
       initial={{opacity:0, y:20}}
       animate={{opacity:1,y:0}}
       transition={{
         duration:0.5,
          ease: "easeOut"
       }}
-      onClick={()=>handleClick('contact','/')}
-       className='bg-black dark:text-black text-white py-2 px-5
-       rounded-3xl cursor-pointer hover:scale-105 transition-all duration-150 hidden md:grid'>Contact</motion.button>
+      text='Contact'
+      func={()=>handleClick('contact','/')}
+     />
+      </div>
        <div
        ref={navRef}
        className='md:hidden'>
@@ -190,16 +193,21 @@ const NavbarAnkit = () => {
             })
         }
       </ul>
-        <motion.button
+      <div>
+        <MotionBentoCard
       initial={{opacity:0, y:20}}
       animate={{opacity:1,y:0}}
       transition={{
         duration:0.5,
          ease: "easeOut"
       }}
-      onClick={()=>handleClick('contact','/')}
-       className='bg-black w-fit dark:text-black text-white py-2 px-5
-       rounded-3xl cursor-pointer hover:scale-105 transition-all duration-150'>Contact</motion.button>
+      func={()=>{
+        handleClick('contact','/');
+        toggleNav();
+      }}
+      text='Contact'
+      />
+      </div>
        </motion.nav>
        }
        </div>

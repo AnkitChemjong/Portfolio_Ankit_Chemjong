@@ -9,6 +9,7 @@ import Contact from "@/components/Contact";
 import Image from 'next/image';
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
+import { BentoCard } from "@/components/HoverEffect";
 
 export default function Home() {
   const { scrollY } = useScroll(); // get vertical scroll value
@@ -19,6 +20,12 @@ export default function Home() {
   const [scaleRange, setScaleRange] = useState([1, 1.1]);
   const [rotateRange, setRotateRange] = useState([0, -15]);
   
+  const handleClick=(id:string)=>{
+    const navigation= document.getElementById(id);
+    if(navigation){
+      navigation.scrollIntoView({behavior:"smooth"});
+    }
+  }
   useEffect(() => {
     const updateRanges = () => {
       if (window.innerWidth <768) {
@@ -83,9 +90,9 @@ export default function Home() {
         <h1 className="title md:text-4xl text-2xl">WEB</h1>
         <h1 className="title md:text-4xl text-2xl">DEVELOPER</h1>
         </div>
-        <button className='bg-black dark:text-black text-white py-2 px-5
-        md:shrink-0
-       rounded-3xl cursor-pointer hover:scale-105 transition-all duration-150 w-fit'>Hire Me</button>
+        <BentoCard
+        func={()=>{handleClick("contact")}}
+        text="Hire Me" />
             </div>
       </div>
      </div>
