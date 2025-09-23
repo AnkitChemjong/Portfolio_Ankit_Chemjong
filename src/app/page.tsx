@@ -10,7 +10,6 @@ import Image from 'next/image';
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 
-
 export default function Home() {
   const { scrollY } = useScroll(); // get vertical scroll value
 
