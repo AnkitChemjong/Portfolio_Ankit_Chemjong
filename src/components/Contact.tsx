@@ -116,6 +116,7 @@ const Contact = () => {
               <div className='pt-4'>
                 <button
                   type='submit'
+                  disabled={!formData.acceptedTerms}
                   className='w-full bg-gradient-to-r cursor-pointer from-amber-500 to-amber-600 text-white py-3 px-6 rounded-lg hover:from-amber-600 hover:to-amber-700 transition-all duration-300 font-medium text-center shadow-md hover:shadow-lg'
                 >
                   Send Inquiry

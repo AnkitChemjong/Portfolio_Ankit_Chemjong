@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const ProjectAnkit = () => {
@@ -19,33 +20,45 @@ const ProjectAnkit = () => {
           </div>
 
           {/* Right Rotated Box */}
-          <div className='md:w-1/2 flex justify-center md:justify-end '>
+          <div className=' md:w-1/2 flex justify-center md:justify-end '>
             <div className='w-80 h-80  md:w-96 md:h-96 bg-gray-100 flex-col
+            border-2 border-amber-950 hover:rotate-6 transition-all duration-150
              rounded-2xl -rotate-12 flex items-center group justify-center cursor-pointer
-             shadow-lg'>
+             shadow-lg relative'>
+             <div className="absolute w-full h-full rounded-xl bg-[url('/image/epathsala.PNG')] 
+               bg-no-repeat bg-center bg-cover"></div>
               <h3 className="text-xl font-semibold mb-1 relative opacity-0 group-hover:opacity-100 transition-all 
-            group-hover:top-0 top-50 duration-300 ease-in-out">Prints Designed</h3>
-              <p className="text-gray-500 mb-4 relative opacity-0 group-hover:opacity-100 transition-all 
-            group-hover:top-0 top-50 duration-300 ease-in-out">Energetic Tumbler.</p>
+            group-hover:top-0 top-50 duration-300 ease-in-out">Efficient Pathsala</h3>
+            <Link href="#">
+              <p className="text-gray-950 mb-4 relative opacity-0 group-hover:opacity-100 transition-all 
+            group-hover:top-0 top-50 duration-300 ease-in-out">E-Learning Platform.</p>
+            </Link>
             </div>
           </div>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center'>
-          <div className='bg-gray-100 rounded-xl p-6 w-80 h-80 md:h-96 md:w-96 
-          rotate-12 md:-rotate-12 shadow-lg group flex flex-col justify-center items-center cursor-pointer'>
+          <div className='bg-gray-100 relative rounded-xl p-6 w-80 h-80 md:h-80 md:w-80 lg:w-96 lg:h-96 
+          rotate-12 md:-rotate-12 shadow-lg hover:rotate-6 transition-all duration-150 group flex flex-col justify-center items-center border-2 border-amber-950
+           cursor-pointer'>
+            <div className="absolute w-full h-full rounded-xl bg-[url('/image/jjnepali.PNG')] 
+            bg-no-repeat bg-center bg-cover"></div>
             <h3 className="text-xl font-semibold mb-1 relative opacity-0 group-hover:opacity-100 transition-all 
-            group-hover:top-0 top-50 duration-300 ease-in-out">Saving a View</h3>
-            <p className="text-gray-500 mb-4 relative opacity-0 group-hover:opacity-100 transition-all 
-            group-hover:top-0 top-50 duration-300 ease-in-out">Scene.</p>
+            group-hover:top-0 top-50 duration-300 ease-in-out">JJ Nepali Removal</h3>
+            <p className="text-gray-950 mb-4 relative opacity-0 group-hover:opacity-100 transition-all 
+            group-hover:top-0 top-50 duration-300 ease-in-out">Shipment Company.</p>
           </div>
 
-          <div className='bg-gray-100 rounded-xl  p-6 w-80 h-80 md:h-96 
-          md:w-96 -rotate-12 md:rotate-12 flex flex-col justify-center items-center cursor-pointer
-          shadow-lg mt-20 md:mt-0 group'>
+          <div className='bg-gray-100 relative rounded-xl  p-6 w-80 h-80 md:h-80 md:w-80 lg:w-96 lg:h-96 
+          -rotate-12 md:rotate-12 flex flex-col justify-center items-center cursor-pointer
+          shadow-lg hover:rotate-6 transition-all duration-150 mt-20 md:mt-0 group border-2 border-amber-950'>
+            <div className="absolute w-full h-full rounded-xl bg-[url('/image/futuristic.PNG')] 
+            bg-no-repeat bg-center bg-cover"></div>
             <h3 className="text-xl font-semibold mb-1 relative opacity-0 group-hover:opacity-100 transition-all 
-            group-hover:top-0 top-50 duration-300 ease-in-out">Prints Designed</h3>
-            <p className="text-gray-500 mb-4 relative opacity-0 group-hover:opacity-100 transition-all 
-            group-hover:top-0 top-50 duration-300 ease-in-out">Energetic Tumbler.</p>
+            group-hover:top-0 top-50 duration-300 ease-in-out">Futuristic Website</h3>
+            <Link href="https://futuristic-website-cyan.vercel.app/">
+            <p className="text-gray-950 mb-4 relative opacity-0 group-hover:opacity-100 transition-all 
+            group-hover:top-0 top-50 duration-300 ease-in-out">Smooth Animation.</p>
+            </Link>
           </div>
         </div>
       </div>
