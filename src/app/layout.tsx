@@ -1,4 +1,3 @@
-"use client"
 import type { Metadata } from "next";
 import { Geist, Geist_Mono,Dancing_Script,Oswald,Playfair_Display } from "next/font/google";
 import "./globals.css";
